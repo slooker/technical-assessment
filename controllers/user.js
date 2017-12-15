@@ -1,11 +1,8 @@
 const User = require('../models/user')
 
 module.exports = {
-  createUser(data) {
-    const user = new User({
-      name: data.name,
-      avatar: data.avatar
-    })
+  create (data) {
+    const user = new User(data)
     return user.save()
   }
 }

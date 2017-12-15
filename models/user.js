@@ -1,7 +1,6 @@
 const mongoose = require('../db')
 
-const Schema = mongoose.Schema,
-      ObjectId = mongoose.ObjectId
+const Schema = mongoose.Schema
 
 const User = new Schema({
   name: {

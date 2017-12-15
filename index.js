@@ -8,23 +8,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Include routes from external file for cleanliness
-const routes = require('./routes')(app)
-
-/*
-User Model:
-_id
-name (String)
-avatar (Url)
-
-Article Model
-_id
-userId (User._id)
-title (string)
-text (string)
-tags (array of strings)
-
-
-*/
+const routes = require('./routes')(app) // eslint-disable-line no-unused-vars
 
 // Default error handling.  This should catch any sort of application errors, and
 // will default the status to `err.status`
@@ -32,7 +16,6 @@ app.use(function (err, req, res, next) {
   console.error(err.stack)
   res.status(err.status || 500).send(err.message)
 })
-
 
 app.listen(config.port, () => {
   console.log(`Listening on port ${config.port}`)

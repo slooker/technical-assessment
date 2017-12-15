@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "NODE_ENV=testing mocha tests/ --exit"
+    "test": "standard && mocha tests/ --exit"
   },
   "keywords": [
     "api",
@@ -17,7 +17,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.13.7"
+    "mongoose": "^4.13.7",
+    "standard": "^10.0.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",
