@@ -16,5 +16,9 @@ module.exports = {
 
   delete (id) {
     return Article.deleteOne({ _id: id })
+  },
+
+  findTag (tag) {
+    return Article.find({ tags: tag })
   }
 }

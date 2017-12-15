@@ -90,3 +90,37 @@ Deletes an article
 
 #### response ####
 { "deleted": ":id" }
+
+### GET /article/tags/tag ###
+Gets a list of articles by tag
+
+#### response ####
+[
+  {
+    "_id": "5a3350f72822b4cb8bfe1c78",
+    "text": "new article text 6",
+    "title": "new artice title",
+    "userId": "5a3350f12822b4cb8bfe1c77",
+    "__v": 0,
+    "tags": [
+      "awesome",
+      "article",
+      "coding"
+    ]
+  },
+  {
+    "_id": "5a3351012822b4cb8bfe1c79",
+    "text": "new article text",
+    "title": "new artice title",
+    "userId": "5a3350f12822b4cb8bfe1c77",
+    "__v": 0,
+    "tags": [
+      "awesome",
+      "article",
+      "coding"
+    ]
+  }
+]
+
+## Things to add or consider
+* Testing could be more strenous.  There's not much testing, because there's no business logic other than CRUD which can be validated through mongoose.

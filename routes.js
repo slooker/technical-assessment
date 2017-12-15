@@ -39,5 +39,8 @@ module.exports = (app) => {
   })
 
   app.get('/articles/tag/:tag', (req, res, next) => {
+    Article.findTag(req.params.tag)
+    .then(data => res.json(data))
+    .catch(next)
   })
 }
