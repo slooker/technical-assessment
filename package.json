@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "load-fixture-data": "node scripts/load-data.js",
     "start": "node index.js",
     "test": "standard && mocha tests/ --exit"
   },

@@ -10,6 +10,10 @@ module.exports = {
     return Article.findOne({ _id: id })
   },
 
+  getAll () {
+    return Article.find()
+  },
+
   update (id, article) {
     return Article.findOneAndUpdate({ _id: id }, { $set: article }, { new: true })
   },

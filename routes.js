@@ -43,6 +43,13 @@ module.exports = (app) => {
     .catch(next)
   })
 
+  // Get all articles
+  app.get('/articles', (req, res, next) => {
+    Article.getAll()
+    .then(data => res.json(data))
+    .catch(next)
+  })
+
   // Get list of articles by tag
   app.get('/articles/tag/:tag', (req, res, next) => {
     Article.findTag(req.params.tag)

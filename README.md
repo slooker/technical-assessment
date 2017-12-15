@@ -12,6 +12,7 @@ There is a config file in `config/index.js` that lists some environmental variab
 1.  You'll need to have mongo running.
 2.  Set the environmental variables above, assuming the defaults don't work for you.
 3.  Run `yarn install` to install the dependencies.
+4.  If you want pre-loaded data, run `yarn load-fixture-data`
 4.  Start the server in dev mode by running `yarn dev` or in production mode by running `yarn start`
 
 ## Authorization ##
@@ -93,16 +94,21 @@ Edits an article
 #### response ####
 ```
 {
-	"__v": 0,
-	"text": "new article text",
-	"title": "new artice title",
-	"userId": "5a3350f12822b4cb8bfe1c77",
-	"_id": "5a3351312822b4cb8bfe1c7b",
-	"tags": [
-		"awesome",
-		"article",
-		"coding"
-	]
+  "_id": "5a341784ba9227db32ef965c",
+  "userId": "5a341784ba9227db32ef965b",
+  "title": "Article 0",
+  "text": "Text for article 0",
+  "__v": 0,
+  "tags": [
+    "article",
+    "tech",
+    "workast",
+    "slack",
+    "discord",
+    "chat",
+    "hipchat",
+    "spark"
+  ]
 }
 ```
 
@@ -145,6 +151,40 @@ Gets a list of articles by tag
 ]
 ```
 
+#### GET /articles ####
+Gets a list of all articles
+
+#### response ####
+```
+[
+  {
+    "_id": "5a3350f72822b4cb8bfe1c78",
+    "text": "new article text 6",
+    "title": "new artice title",
+    "userId": "5a3350f12822b4cb8bfe1c77",
+    "__v": 0,
+    "tags": [
+      "awesome",
+      "article",
+      "coding"
+    ]
+  },
+  {
+    "_id": "5a3351012822b4cb8bfe1c79",
+    "text": "new article text",
+    "title": "new artice title",
+    "userId": "5a3350f12822b4cb8bfe1c77",
+    "__v": 0,
+    "tags": [
+      "awesome",
+      "article",
+      "coding"
+    ]
+  }
+]
+```
+
 ## Things to add or consider
 * Testing could be more strenous.  There's not much testing, because there's no business logic other than CRUD which can be validated through mongoose.
 * Usually we'd have a `Bearer` token in the `Authorization` header, but for now we're just sticking the normal token there.
+* There is no validation of uniqueness on names or article titles.  It wasn't in the requirements, but if I was going to add it, I'd have it as some sort of validation in the controller, or as a pre-save hook in mongoose in the model.
