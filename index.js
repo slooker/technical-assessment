@@ -1,8 +1,13 @@
 const express = require('express')
 const config = require('./config')
 const bodyParser = require('body-parser')
+const middleware = require('./util/middleware')
 
 const app = express()
+
+// Use auth middleware for all requests
+app.use(middleware.authApiKey)
+
 
 // parse JSON in the request body
 app.use(bodyParser.json())
