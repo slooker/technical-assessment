@@ -1,11 +1,25 @@
-There is a config file in `config/index.js` that lists some environmental variables.  All of them have what I would consider somewhat sane defaults.
 
 The mongoose connection is split into a separate file so that we don't have to set our Promises to ES6 promises in each of our models.
 
 You can start the server with nodemon by running `yarn dev`.
 
+## Config options ##
+There is a config file in `config/index.js` that lists some environmental variables.  All of them have what I would consider somewhat sane defaults.
+
+* DB_URL - This is the host name of the database.  This defaults to `localhost`.
+* DB_NAME - The name of the mongo db.  This defaults to `workast`.
+* API_KEY - The API key that we're going to compare against for all incoming requests.  This defaults to `ABC123`.
+* PORT - the port that the server will actually run on.  This defaults to 8080.
+
+
 ## Authorization ##
-All endpoints require an API key inside of the `authorization` header field.
+All endpoints require an API key inside of the `authorization` header field.  An example via curl might be
+
+```
+curl --request GET \
+  --url http://localhost:8080/article/5a33ed485b0befd065c19cce \
+  --header 'authorization: ABC123'
+```
 
 ## Endpoints ##
 All fields are required unless otherwise specified.
