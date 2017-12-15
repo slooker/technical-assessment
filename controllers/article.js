@@ -12,5 +12,9 @@ module.exports = {
 
   update (id, article) {
     return Article.findOneAndUpdate({ _id: id }, { $set: article }, { new: true })
+  },
+
+  delete (id) {
+    return Article.deleteOne({ _id: id })
   }
 }

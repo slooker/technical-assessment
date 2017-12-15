@@ -84,3 +84,9 @@ Edits an article
 	]
 }
 ```
+
+### DELETE /article/:id ###
+Deletes an article
+
+#### response ####
+{ "deleted": ":id" }

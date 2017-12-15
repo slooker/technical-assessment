@@ -22,12 +22,20 @@ module.exports = (app) => {
 
   app.get('/article/:id', (req, res, next) => {
     return Article.findById(req.params.id)
-    .then(data => res.json(data))
+    .then(data => {
+      // If there's no id found, it will return a null object
+      if (!data) {
+        return res.status(404).send('Not found')
+      }
+      return res.json(data)
+    })
     .catch(next)
   })
 
   app.delete('/article/:id', (req, res, next) => {
-
+    Article.delete(req.params.id)
+    .then(() => res.json({ deleted: req.params.id }))
+    .catch(next)
   })
 
   app.get('/articles/tag/:tag', (req, res, next) => {
