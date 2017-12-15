@@ -4,8 +4,11 @@ The mongoose connection is split into a separate file so that we don't have to s
 
 You can start the server with nodemon by running `yarn dev`.
 
+## Authorization ##
+All endpoints require an API key inside of the `authorization` header field.
+
 ## Endpoints ##
-All fields are required unless otherwise specified
+All fields are required unless otherwise specified.
 
 ### POST /user ###
 Creates a new user.
@@ -95,6 +98,7 @@ Deletes an article
 Gets a list of articles by tag
 
 #### response ####
+```
 [
   {
     "_id": "5a3350f72822b4cb8bfe1c78",
@@ -121,6 +125,8 @@ Gets a list of articles by tag
     ]
   }
 ]
+```
 
 ## Things to add or consider
 * Testing could be more strenous.  There's not much testing, because there's no business logic other than CRUD which can be validated through mongoose.
+* Usually we'd have a `Bearer` token in the `Authorization` header, but for now we're just sticking the normal token there.

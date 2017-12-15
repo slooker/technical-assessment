@@ -1,0 +1,47 @@
+Position: Platform Engineer / Back-end Developer API
+
+Summary: Create a RESTful API that would allow an application to manage users and articles.
+
+User Model:
+_id
+name (String)
+avatar (Url)
+
+Article Model
+_id
+userId (User._id)
+title (string)
+text (string)
+tags (array of strings)
+
+Required endpoints:
+Create a new user
+Create a new article
+Edit an article
+Delete an article
+Return all articles (from all users) that contains the given tag
+
+Authentication
+This API will be private, used by a mobile app or server side applications so every call to the API will include an API token (example: 5CD4ED173E1C95FE763B753A297D5) to validate.
+Please indicate in the API documentation where in the request we should place that token. Note: for simplicity make the token an environment variable
+
+Technical requirements:
+The solution should be clear, concise, efficient and maintainable.
+Express.js
+MongoDB
+Please do not use auto-generated code, start from scratch
+Please use a public repository on Github or Bitbucket and treat this assignment as a work project, doing frequent and descriptive commits as this will be evaluated as well.
+You are of course free to use whatever resources or references that are available to you but it is expected that the design/solution will be 100% your own.
+
+
+Please choose your tools wisely, do not try to impress with the latest framework/library version if you don’t know it well, pick something that you can show off how much knowledge you have and that you can work on it quickly.
+
+This is a simple assessment but you should treat it as an application that will have a lot of traffic, that other developers will work on it simultaneously and that will be extended with new features. You should be familiar with concepts like TDD, Modularity, OOP, etc.
+
+As a developer sometimes we try to overthink stuff, focus on the requirements and deliver clean, readable and reusable code.
+
+This is not a time sensitive assessment and we know that you probably have a full-time job while applying, so take your time. If you need to refactor, take one more day and do it. You should send us your best code.
+
+Deliverables: You should send us back a Github/Bitbucket repository link, with clear instructions on how to build and run the application as a well as the API documentation.
+
+
